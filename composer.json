@@ -1,10 +1,11 @@
 {
     "name": "brave-experiments/sku-php",
     "description": "Composer plugin for using sku workflow in Brave",
-    "type": "composer-plugin",
     "require": {
+	"php": "^7.2",
         "immense/macaroons": "^2.0"
     },
+    "license": "MPL-2.0",
     "authors": [
         {
             "name": "Pranjal",
