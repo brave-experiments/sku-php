@@ -1,0 +1,14 @@
+{
+    "name": "brave-experiments/sku-php",
+    "description": "Composer plugin for using sku workflow in Brave",
+    "type": "composer-plugin",
+    "require": {
+        "immense/macaroons": "^2.0"
+    },
+    "authors": [
+        {
+            "name": "Pranjal",
+            "email": "pranjal@brave.com"
+        }
+    ]
+}
