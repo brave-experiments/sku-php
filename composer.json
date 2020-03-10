@@ -6,6 +6,11 @@
         "immense/macaroons": "^2.0"
     },
     "license": "MPL-2.0",
+    "autoload": {
+        "psr-4": {
+            "Sku\\": "src"
+        }
+    },
     "authors": [
         {
             "name": "Pranjal",
