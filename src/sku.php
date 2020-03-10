@@ -1,4 +1,5 @@
 <?php
+namespace Sku;
 
 use Macaroons\Utils;
 use Macaroons\Macaroon;
