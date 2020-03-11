@@ -10,7 +10,7 @@ class Sku {
         // Current website or variable representing the website
        $location = $_SERVER['HTTP_HOST'];
 
-       $m = new Macaroon($identifier, $secret, $location);
+       $m = new Macaroon($secret, $identifier, $location);
   
        $m->addFirstPartyCaveat('id = ' . $id);
        $m->addFirstPartyCaveat('amount = ' . $amount);
