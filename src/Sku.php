@@ -6,8 +6,9 @@ use Macaroons\Macaroon;
 use Macaroons\Packet;
 
 class Sku {
-    public static function generateSKUToken($identifier, $secret, $id, $amount, $currency, $description, $expiry) {
-        // Current website or variable representing the website
+    public static function generateSKUToken($secret, $id, $amount, $currency, $description, $expiry) {
+       $identifier = "Brave SKU v1.0";
+       // Current website or variable representing the website
        $location = $_SERVER['HTTP_HOST'];
 
        $m = new Macaroon($secret, $identifier, $location);
