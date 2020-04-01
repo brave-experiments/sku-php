@@ -38,10 +38,10 @@ class Sku
         return $response;
     }
 
-    public static function validateOrderStatus($orderId)
+    public static function validateOrderStatus($host, $orderId)
     {
         $location = Sku::getHost();
-        $url = "https://grant.rewards.brave.software/v1/orders/" . $orderId;
+        $url = "https://". $host ."/v1/orders/" . $orderId;
         $response = file_get_contents($url);
         $json = json_decode(strval($response));
 

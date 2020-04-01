@@ -15,4 +15,5 @@ The PHP library consists of:
 * **validateOrderStatus** - Once the order id is returned by the rewards service, this wrapper can be used to check if the transaction was completed. See code [here](https://github.com/brave-experiments/sku-php/blob/master/src/Sku.php#L41)
 
     Parameters:
+    * **host**: String,
     * **orderId**: String
