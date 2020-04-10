@@ -38,16 +38,28 @@ class Sku
         return $response;
     }
 
-    public static function validateOrderStatus($host, $orderId)
+    public static function getOrderDetails($host, $orderId)
     {
-        $location = Sku::getHost();
         $url = "https://". $host ."/v1/orders/" . $orderId;
         $response = file_get_contents($url);
-        $json = json_decode(strval($response));
+        if (!$response) {
+            return json_decode("{}");
+        }
+        return json_decode(strval($response));
+    }
+
+    public static function validateOrderStatus($host, $orderId)
+    {
+        $json = Sku::getOrderDetails($host, $orderId);
+        if (empty($json->{'status'}) || empty($json->{'location'})) {
+            return Sku::sendResponse(false, "Unable to fetch status for ". $orderId);
+        }
 
         if ($json->{'status'} != 'paid') {
             return Sku::sendResponse(false, "Payment status is ". $json->{'status'});
         }
+
+        $location = Sku::getHost();
         if ($json->{'location'} != $location) {
             return Sku::sendResponse(false, "Payment location is invalid. Expected: ". $location . " Actual: " . $json->{'location'});
         }

@@ -12,7 +12,13 @@ The PHP library consists of:
     * **description**: String
     * **expiry**: String in RFC3339 format
 
-* **validateOrderStatus** - Once the order id is returned by the rewards service, this wrapper can be used to check if the transaction was completed. See code [here](https://github.com/brave-experiments/sku-php/blob/master/src/Sku.php#L41)
+* **getOrderDetails** - Get all order details for an order id returned by the rewards service. See code [here](https://github.com/brave-experiments/sku-php/blob/master/src/Sku.php#L41)
+
+    Parameters:
+    * **host**: String,
+    * **orderId**: String
+
+* **validateOrderStatus** - Once the order id is returned by the rewards service, this wrapper can be used to check if the transaction was completed. See code [here](https://github.com/brave-experiments/sku-php/blob/master/src/Sku.php#L52)
 
     Parameters:
     * **host**: String,
